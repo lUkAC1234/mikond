@@ -1,0 +1,125 @@
+.main {
+    .main__wrapper {
+        .video-container {
+            & {
+                margin-top: 100px;
+            }
+
+            .video {
+                width: 100%;
+                object-fit: cover;
+                height: 56vw;
+            }
+        }
+
+        .image-container {
+            & {
+                background: #fff;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 100px;
+            }
+
+            .image-text {
+                & {
+                    padding-left: 300px;
+                    padding-top: 100px;
+                }
+
+                h2 {
+                    & {
+                        font-family: 'Flecha L', Helvetica, Arial, Lucida, sans-serif;
+                        text-transform: uppercase;
+                        letter-spacing: 0.2px;
+                        line-height: 1.1em;
+                        font-size: 30px;
+                        font-weight: 550;
+                    }
+
+                    p {
+                        color: #6B90B9;
+                        font-weight: 400;
+                    }
+
+                    span {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            .image-img {
+                & {
+                    min-width: 500px;
+                    min-height: 500px;
+                    margin-right: 200px;
+                }
+
+                .image {
+                    background-image: url('../../images/main-page/first-image.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1405px) {
+            .image-container {
+                & {
+                    display: inline-block;
+                }
+
+                .image-text {
+                    max-width: 100%;
+                    background-image: url('../../images/main-page/first-image.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    padding-top: 500px;
+
+                    h2 {
+                        z-index: 5;
+                    }
+                }
+
+                .image-img {
+                    min-width: 0;
+                    min-height: 0;
+
+                    .image {
+                        display: none;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 718px) {
+                .image-container {
+                    & {
+                        width: 100%;
+                    }
+
+                    .image-text {
+                        width: 100%;
+                        padding: 0;
+                        padding-top: 500px;
+
+                        h2 {
+                            z-index: 5;
+                            text-align: center;
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+
+                    .image-img {
+                        .image {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

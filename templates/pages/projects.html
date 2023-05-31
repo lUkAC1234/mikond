@@ -1,0 +1,44 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br><br>
+<main class="main">
+    <div class="main__wrapper">
+        <div class="selected-projects">
+            <h1 class="projects-title">BESPOKE <br> PROJECTS</h1>
+            <p class="projects-text">
+                Discover our work within the hospitality industry, restaurants, public places, spa resorts, yachts, <br>
+                airports, and private residences worldwide. Thanks to our extensive design experience on many <br>
+                different projects and our unique commercial expertise, we can deliver creative and high-performing <br>
+                lighting solutions for any interior.
+            </p>
+            <div class="buttons">
+                <button class="button sort-all active">ALL</button>
+                <button class="button sort-america">AMERICA</button>
+                <button class="button sort-asia">ASIA</button>
+                <button class="button sort-europe">EUROPE</button>
+                <button class="button sort-middleeast">MIDDLEEAST</button>
+            </div>
+
+            <div class="selected-container">
+                {% for object in object_list %}
+                    <div id="1" class="item {{ object.categories }}">
+                        <div class="selected-column">
+                            <a href="{% url 'detail-projects' pk=object.pk %}">
+                                <img src="{{ object.project_image.url }}" alt="">
+                                <p class="selected-text">
+                                    {{ object.title }}
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block js_block %}
+<script src="{% static 'main/scripts/projects.js' %}"></script>
+{% endblock %}

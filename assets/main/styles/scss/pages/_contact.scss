@@ -1,0 +1,266 @@
+.contact_body {
+    padding: 100px 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+.reMax {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 85rem;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contact_information,
+.contact_form {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+
+.info_group {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+
+
+.c_icon {
+    width: 65px;
+    height: 65px;
+    background: #FFCC00;
+    font-size: 20px;
+    display: flex;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.c_icon i {
+    color: #353535;
+}
+
+.c_text {
+    margin-left: 20px;
+}
+
+.c_text h2 {
+    font-weight: 500;
+    font-size: 24px;
+    color: #353535;
+}
+
+.c_text p {
+    color: #7A7A7A;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.contact__form {
+    padding: 15px;
+    width: max-content;
+}
+
+.contact__form .form_group .input_control input {
+    width: 310px;
+    height: 64px;
+    border: 0.5px solid #7A7A7A;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+}
+
+
+
+.contact__form .input_control {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact__form .input_control .textinput {
+    width: 100% !important;
+    height: 246px !important;
+    resize: none;
+    border: 0.5px solid #7A7A7A;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 20px;
+    outline: none;
+}
+
+.contact__form .form_group .input_control input:focus,
+.contact__form .input_control .textinput:focus {
+    border: 0.5px solid #FFCC00 !important;
+}
+
+
+
+@media only screen and (min-width: 1081px) and (max-width: 1200px) {
+
+    .contact__form .form_group .input_control input {
+        width: 280px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1080px) {
+
+    .contact__form .form_group .input_control input {
+        width: 250px;
+    }
+}
+
+@media only screen and (min-width: 781px) and (max-width: 991px) {
+
+    .contact_information,
+    .contact_form {
+        width: auto;
+    }
+
+    .contact__form {
+        width: auto;
+        margin-top: 40px;
+        padding: 0px;
+    }
+
+    .contact__form .form_group .input_control input {
+        width: 100%;
+    }
+
+    .contact_info {
+        flex-direction: column;
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 780px) {
+
+    .contact_information,
+    .contact_form {
+        width: auto;
+    }
+
+    .info_group {
+        width: auto;
+    }
+
+    .c_text p {
+        font-size: 16px;
+    }
+
+    .contact__form {
+        width: auto;
+        padding: 0px !important;
+        margin-top: 35px;
+    }
+
+    .contact__form .form_group .input_control input {
+        width: 100%;
+    }
+
+    .contact_info {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .c_icon {
+        width: 50px;
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .c_text h2 {
+        font-size: 20px;
+    }
+
+    .contact__form {
+        width: auto;
+        margin-top: 35px;
+    }
+
+    .contact_information,
+    .contact_form {
+        padding: 0;
+    }
+
+    .contact__form .form_group .input_control input,
+    .contact__form .input_control .textinput {
+        border-radius: 4px;
+        font-size: 13px;
+    }
+
+    .contact__form .form_group .input_control input {
+        height: 55px;
+    }
+
+    .contact__form .input_control .textinput {
+        height: auto;
+    }
+
+
+}
+
+@media only screen and (min-width: 260px) and (max-width: 319px) {
+    .contact_info {
+        flex-direction: column;
+    }
+
+    .c_icon {
+        width: 50px;
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .c_text h2 {
+        font-size: 20px;
+    }
+
+    .c_text p {
+        font-size: 13px;
+    }
+
+    .contact__form .form_group .input_control input {
+        width: 100%;
+    }
+
+    .contact__form {
+        width: auto;
+        margin-top: 35px;
+    }
+
+    .contact_information,
+    .contact_form {
+        padding: 0;
+    }
+
+    form .form_group .input_control input,
+    form .input_control .textinput {
+        border-radius: 4px;
+        font-size: 13px;
+    }
+
+    .contact__form .form_group .input_control input {
+        height: 55px;
+    }
+
+    .contact__form .input_control .textinput {
+        height: auto;
+    }
+
+}

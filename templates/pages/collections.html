@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br><br>
+<main class="main">
+    <div class="main__wrapper">
+        <div class="selected-projects">
+            <h1 class="projects-title">RESIDENTIAL <br> COLLECTIONS</h1>
+            <p class="projects-text">
+                Discover the best in our residential designs. These collections personify the spirit and DNA of <br>
+                Sans Souci. Time-honored savoire faire, craft, and innovation work hand in hand here to bring <br>
+                you superb lighting solutions suitable for any mood or interior.
+            </p>
+            <div class="buttons">
+                <button class="button sort-all active">ALL</button>
+                <button class="button sort-abstract">ABSTRACT</button>
+                <button class="button sort-geometric">GEOMETRIC</button>
+                <button class="button sort-nature">NATURE</button>
+            </div>
+
+            <div class="selected-container">
+                {% for object in object_list %}
+                    <div id="1" class="item {{ object.categories }}">
+                        <div class="selected-column">
+                            <a href="{% url 'detail-collections' pk=object.pk %}">
+                                <img src="{{ object.collection_image.url }}" alt="">
+                                <p class="selected-text">
+                                    {{ object.title }}
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block js_block %}
+<script src="{% static 'main/scripts/collections.js' %}"></script>
+{% endblock %}

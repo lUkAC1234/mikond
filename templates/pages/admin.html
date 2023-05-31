@@ -1,0 +1,46 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br><br><br><br>
+<div class="contacts table" aria-labelledby="contacts-caption-text">
+    <div class="contacts-header thead">
+        <span class="th" id="th-name">Created at:</span>
+        <span class="th" id="th-name">User:</span>
+        <span class="th" id="th-org">Name:</span>
+        <span class="th" id="th-phone">Email:</span>
+        <span class="th" id="th-email">Message:</span>
+    </div>
+    <ul class="tbody">
+        {% for object in contact_list %}
+        <li class="tr" itemscope>
+            <span class="td">
+                <span class="label">Created at:</span>
+                <span class="data" itemprop="id" aria-labelledby="th-id">{{ object.created_at|date:"d F Y f"}}</span>
+            </span>
+            <span class="td">
+                <span class="label">User:</span>
+                <span class="data" itemprop="name" aria-labelledby="th-name">{{ object.user }}</span>
+            </span>
+            <span class="td">
+                <span class="label">Name:</span>
+                <span class="data" itemprop="name" aria-labelledby="th-name">{{ object.name }}</span>
+            </span>
+            <span class="td">
+                <span class="label">Email:</span>
+                <span class="data email" itemprop="email" aria-labelledby="th-email"><a
+                        href="mailto:{{ object.email }}">{{ object.email }}</a></span>
+            </span>
+            <span class="td" itemscope>
+                <span class="label">Message:</span>
+                <a href="{% url 'contactdetail' pk=object.pk %}" style="color: #000;">
+                    <span class="data" itemprop="name" aria-labelledby="th-org">
+                        {{ object.message|truncatechars:35 }}
+                        <img src="{% static 'main/images/admin/rightArrowBlack.svg' %}" alt="" style="margin-top: -3px;"> 
+                    </span>
+                </a>
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br><br>
+<main class="main">
+    <div class="main__wrapper">
+        <div class="detail-image" style="background: url('{{ object.project_image.url }}') center center no-repeat">
+            <h1>{{ object.title }}</h1>
+        </div>
+        <div class="detail-container">
+            <div class="detail-column">
+                {% if object.project_second_image != None and object.project_second_image != '' %}
+                    <img src="{{ object.project_second_image.url }}" alt="">
+                {% else %}
+                    <img src="{% static 'main/images/about/about-image3.webp' %}" alt="">
+                {% endif %}
+            </div>
+            <div class="detail_column_text">
+                <p>{{ object.project_info }}</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

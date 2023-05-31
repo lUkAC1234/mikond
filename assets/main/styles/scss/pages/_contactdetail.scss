@@ -1,0 +1,273 @@
+.main {
+    .main__wrapper {
+        .contact__wrapper {
+            & {
+                margin-top: 100px;
+                background-size: cover;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .container,
+            .user-container {
+                & {
+                    width: 50%;
+                    min-width: 500px;
+                    background: #fff;
+                    border-radius: 6px;
+                    padding: 20px 60px 30px 40px;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                }
+
+                .user-text-container {
+                    & {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .user-text-column {
+                        & {
+                            display: grid;
+                            grid-template-columns: auto auto;
+
+                            h6 {
+                                width: 100%;
+                            }
+
+                            span {
+                                padding: 5px 0px 0 50px;
+                                width: 100%;
+                            }
+                        }
+                        
+                        a {
+                            color: blue;
+                        }
+
+                        .user-text {
+                            & {
+                                font-size: 20px;
+                                padding: 5px 0;
+                                color: #CDA274;
+                                margin: 0;
+                            }
+
+                            span,
+                            p {
+                                font-size: 18px;
+                                font-weight: 400;
+                                color: #292F36;
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        .user-text-column>button {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+
+
+                .content {
+                    & {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
+                    .left-side {
+                        & {
+                            width: 25%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: 15px;
+                            position: relative;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            height: 70%;
+                            width: 2px;
+                            right: -15px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: #afafb6;
+                        }
+
+                        .details {
+                            & {
+                                margin: 14px;
+                                text-align: center
+                            }
+
+                            i {
+                                font-size: 30px;
+                                color: #CDA274;
+                                margin-bottom: 10px;
+                            }
+
+                            .topic {
+                                font-size: 18px;
+                                font-weight: 500;
+                            }
+
+                            .text-one,
+                            .text-two {
+                                font-size: 14px;
+                                color: #292F36;
+                            }
+                        }
+                    }
+
+                    .right-side {
+                        & {
+                            width: 75%;
+                            margin-left: 75px;
+                        }
+
+                        .topic-text {
+                            font-size: 23px;
+                            font-weight: 600;
+                            color: #CDA274;
+                        }
+
+                        form {
+                            .input-box {
+                                & {
+                                    height: 50px;
+                                    width: 100%;
+                                    margin: 12px 0;
+
+                                    .input-error {
+                                        & {
+                                            margin: 10px;
+                                            color: orangered;
+                                            text-decoration: none;
+                                        }
+
+                                        li {
+                                            list-style: none;
+                                        }
+                                    }
+                                }
+
+                                input,
+                                textarea {
+                                    height: 100%;
+                                    width: 100%;
+                                    border: none;
+                                    outline: none;
+                                    font-size: 16px;
+                                    background: #F0F1F8;
+                                    border-radius: 6px;
+                                    padding: 0 15px;
+                                    resize: none;
+                                    margin-top: 5px;
+                                }
+
+                                textarea {
+                                    padding-top: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 900px) {
+                .user-container {
+                    .user-text-container {
+                        .user-text-column {
+                            & {
+                                grid-template-columns: auto;
+                            }
+
+                            p,
+                            span {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 530px) {
+                    .user-container {
+                        & {
+                            min-width: 0;
+                            width: 96%;
+                            margin: 0 2%;
+                        }
+                    }
+                }
+            }
+
+            .container-user {
+                & {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-flow: column;
+                }
+
+                .user-container {
+                    margin-top: 10px;
+                }
+            }
+
+            @media (max-width: 950px) {
+                .container {
+                    width: 90%;
+                    padding: 30px 40px 40px 35px;
+                }
+
+                .container .content .right-side {
+                    width: 75%;
+                    margin-left: 55px;
+                }
+            }
+
+            @media (max-width: 820px) {
+                .container {
+                    margin: 50px 0;
+                    height: 100%;
+                }
+
+                .container .content {
+                    flex-direction: column-reverse;
+                }
+
+                .container .content .left-side {
+                    width: 100%;
+                    flex-direction: row;
+                    margin-top: 40px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .container .content .left-side::before {
+                    display: none;
+                }
+
+                .container .content .right-side {
+                    width: 100%;
+                    margin-left: 0;
+                }
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .contact__wrapper {
+                margin-top: 0px;
+            }
+        }
+    }
+}

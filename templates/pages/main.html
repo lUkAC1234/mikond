@@ -1,0 +1,83 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <div class="main__wrapper">
+        <div class="video-container">
+            <video class="video" src="{% static 'main/videos/main-page/mainvideo.mp4' %}" autoplay loop muted></video>
+        </div>
+        <div class="image-container">
+            <div class="image-text">
+                <h2> SANS SOUCI
+                    <p>
+                        IS A CREATOR OF UNIQUE <br>
+                        BESPOKE LIGHTING AND <br>
+                        ARCHITECTURAL ART <br>
+                        INSTALLATIONS.
+                    </p>
+                    <span><a href="{% url 'projects' %}">View</a> <img src="" alt=""></span>
+                </h2>
+            </div>
+            <div class="image-img">
+                <div class="image"></div>
+            </div>
+        </div>
+        <div class="projects">
+            <a href="{% url 'projects' %}">
+                <div class="project-column-first">
+                    <h1 class="project-title">
+                        BESPOKE<br>PROJECTS
+                    </h1>
+                    <p class="project-text">
+                        Our body of work includes hospitality <br>
+                        and restaurant design, medical clinic, <br>
+                        spa resort or airports.
+                    </p>
+                    <span class="project-detail">VIEW</span>
+                </div>
+            </a>
+            <a href="{% url 'projects' %}">
+                <div class="project-column-second">
+                    <h1 class="project-title">
+                        RESIDENTIAL<br>COLLECTIONS
+                    </h1>
+                    <p class="project-text">
+                        Discover the best in our residential designs.<br>
+                        These collections personify the spirit<br>
+                        and DNA of Sans Souci.
+                    </p>
+                    <span class="project-detail">VIEW</span>
+                </div>
+            </a>
+            <a href="{% url 'projects' %}">
+                <div class="project-column-third">
+                    <h1 class="project-title">
+                        HOME<br>EDITION
+                    </h1>
+                    <p class="project-text">
+                        Discover our new line, Home Editions,<br>
+                        and decorate your home with artful<br>
+                        and inspirational design lighting.
+                    </p>
+                    <span class="project-detail">VIEW</span>
+                </div>
+            </a>
+        </div>
+        <div class="selected-projects">
+            <h1 class="selected-title">SELECTED PROJECTS</h1>
+            <div class="selected-container">
+                {% for object in projects %}
+                <div class="selected-column">
+                    <a href="{% url 'detail-projects' pk=object.pk %}">
+                        <img src="{{ object.project_image.url }}" alt="">
+                        <p class="selected-text">
+                            {{ object.title }}
+                        </p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

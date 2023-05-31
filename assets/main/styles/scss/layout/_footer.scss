@@ -1,0 +1,124 @@
+footer {
+    & {
+        display: grid;
+        grid-template-columns: repeat(3, 450px);
+        place-content: center;
+        place-items: center;
+        margin: 150px 0;
+        border-bottom: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+
+    .footer-column {
+        & {}
+
+        .footer-title {
+            font-size: 30px;
+            padding-top: 30px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        img {
+            width: 200px;
+            height: 68px;
+            opacity: 0.2;
+            margin-top: 75px;
+        }
+
+        .column-text {
+            ul {
+                li {
+                    a {
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 14px;
+                        color: #555555;
+                    }
+                }
+            }
+        }
+
+        .column-links {
+            & {
+                margin-top: 50px;
+                margin-left: 32px;
+                display: flex;
+                gap: 5px;
+            }
+
+            div {
+                & {
+                    display: grid;
+                    place-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: black;
+                    border-radius: 50%;
+                }
+
+                i {
+                    color: #fff;
+                }
+            }
+        }
+
+        .column-info {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 21px;
+            color: #BFBFBF;
+            margin-top: 50px;
+        }
+
+        .links-container {
+            & {
+                display: flex;
+                flex-flow: column;
+                margin-top: 75px;
+            }
+
+            .links {
+                color: #000;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    footer {
+        grid-template-columns: repeat(1, 450px);
+        place-content: start;
+        place-items: start;
+        margin-left: 20px;
+
+        .footer-column {
+            .column-text {
+                ul {
+                    margin: 0;
+                    margin-left: 2px;
+                    padding: 0;
+                }
+            }
+
+            .column-links {
+                & {
+                    margin: 20px 0;
+                }
+            }
+
+            .column-info {
+                
+            }
+        }
+    }
+    @media screen and (max-width: 580px) {
+        footer {
+            margin-left: 25px;
+            grid-template-columns: repeat(1, auto);
+    
+            .footer-column {
+                .column-info {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

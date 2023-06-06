@@ -295,7 +295,8 @@
 .main .main__wrapper .about-image-container-center {
   display: flex;
   justify-content: space-around;
-  padding: 30px 20%;
+  padding: 30px 10%;
+  gap: 10px;
 }
 .main .main__wrapper .about-image-container-center .image-text {
   width: 100%;
@@ -465,6 +466,11 @@ main .main__wrapper .selected-projects .projects-text {
   margin: 0 0 100px;
 }
 
+@media screen and (max-width: 600px) {
+  main .main__wrapper .selected-projects .projects-title {
+    font-size: 60px;
+  }
+}
 .buttons {
   padding: 20px 0 40px;
   display: flex;
@@ -1282,10 +1288,14 @@ main .main__wrapper .detail-container .detail_column_text p::first-line {
   }
   .nav > #nav-check:checked ~ .nav-links {
     z-index: 101;
-    height: calc(100vh - 500px);
+    height: calc(100vh - 375px);
     overflow-y: auto;
   }
 }
+.second-header {
+  width: 100%;
+}
+
 .second-header a img {
   width: 100%;
   object-fit: contain;

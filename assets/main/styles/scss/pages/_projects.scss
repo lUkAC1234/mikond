@@ -6,7 +6,6 @@ main {
                 text-align: center;
                 font-size: 80px;
             }
-
             .projects-text {
                 color: #000;
                 text-align: center;
@@ -17,6 +16,17 @@ main {
     }
 }
 
+@media screen and (max-width: 600px) {
+    main {
+        .main__wrapper {
+            .selected-projects {
+                .projects-title {
+                    font-size: 60px;
+                }
+            }
+        }
+    }
+}
 
 .buttons {
     padding: 20px 0 40px;

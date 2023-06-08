@@ -9,21 +9,17 @@ var checkClass = function () {
 $('.sort-all').click(function () {
     checkClass();
 });
-$('.sort-america').click(function () {
+$('.sort-residential').click(function () {
     checkClass();
-    $('.item:not(.america)').toggleClass('hide');
+    $('.item:not(.residential)').toggleClass('hide');
 });
-$('.sort-asia').click(function () {
+$('.sort-commercial').click(function () {
     checkClass();
-    $('.item:not(.asia)').toggleClass('hide');
+    $('.item:not(.commercial)').toggleClass('hide');
 });
-$('.sort-europe').click(function () {
+$('.sort-mosque').click(function () {
     checkClass();
-    $('.item:not(.europe)').toggleClass('hide');
-});
-$('.sort-middleeast').click(function () {
-    checkClass();
-    $('.item:not(.middleeast)').toggleClass('hide');
+    $('.item:not(.mosque)').toggleClass('hide');
 });
 
 // Active tag

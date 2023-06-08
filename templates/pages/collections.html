@@ -23,7 +23,7 @@
                     <div id="1" class="item {{ object.categories }}">
                         <div class="selected-column">
                             <a href="{% url 'detail-collections' pk=object.pk %}">
-                                <img src="{{ object.collection_image.url }}" alt="">
+                                <img src="{{ object.main_image.url }}" alt="">
                                 <p class="selected-text">
                                     {{ object.title }}
                                 </p>

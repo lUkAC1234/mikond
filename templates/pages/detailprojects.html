@@ -4,21 +4,58 @@
 <br><br><br><br><br><br><br>
 <main class="main">
     <div class="main__wrapper">
-        <div class="detail-image" style="background: url('{{ object.project_image.url }}') center center no-repeat">
-            <h1>{{ object.title }}</h1>
-        </div>
-        <div class="detail-container">
-            <div class="detail-column">
-                {% if object.project_second_image != None and object.project_second_image != '' %}
-                    <img src="{{ object.project_second_image.url }}" alt="">
-                {% else %}
-                    <img src="{% static 'main/images/about/about-image3.webp' %}" alt="">
-                {% endif %}
+        <div class="detail">
+            <div class="detail-title">
+                <h1>{{ object.title }}</h1>
             </div>
-            <div class="detail_column_text">
-                <p>{{ object.project_info }}</p>
+            <div class="detail-main-image">
+                <img src="{{ object.main_image.url }}" alt="">
+            </div>
+            <div class="luster-image-container-center">
+                <div class="image">
+                    <img src="{{ object.luster_image.url }}" alt="">
+                </div>
+                <div class="image-text">
+                    <span class="luster-title">{{ object.title }},
+                        <span class="luster-text">
+                            {{ object.project_info }}
+                        </span>
+                        <br>
+                    </span>
+                </div>
+            </div>
+            <div class="luster-image-container-center-second">
+                <div class="image-text">
+                    <span class="luster-title">Designed by {{ object.by }},
+                        <span class="luster-text">
+                            {{ object.by_whom_text }}
+                        </span>
+                        <br>
+                    </span>
+                    </span>
+                </div>
+                <div class="image">
+                    <img src="{% static 'main/images/about/about-image1.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="avaiable-sizes">
+                <h1 class="avaiable-sizes-title">AVAIABLE SIZES</h1>
+                <div class="avaiable-sizes-container" id="fullScreenElement1" onclick="toggleFullScreen('fullScreenElement1')">
+                    <img src="{{ object.size_image.url }}" alt="" onclick="toggleFullScreen('fullScreenElement1')">
+                    <p class="avaiable-sizes-container-text">
+                        {{ object.sizes }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </main>
+{% endblock %}
+
+{% block js_block %}
+    <script>
+        function toggleFullScreen(id) {
+            document.getElementById(id).requestFullscreen()
+        }
+    </script>
 {% endblock %}

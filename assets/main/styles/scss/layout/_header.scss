@@ -46,6 +46,7 @@
     text-transform: uppercase;
     transition: all .3s;
     font-size: 16px;
+    margin: 0;
 }
 
 .nav>.nav-links>a:hover,
@@ -114,8 +115,9 @@
     }
     .nav>#nav-check:checked~.nav-links {
         z-index: 101;
-        height: calc(100vh - 375px);
+        height: auto;
         overflow-y: auto;
+        transition: all 1s;
     }
 }
 

@@ -19,10 +19,15 @@ class CategoryModel(models.Model):
 
 class ProjectsModel(models.Model):
     title = models.CharField(max_length=50)
-    project_image = models.ImageField(upload_to='projects/%Y/%m/%d/')
-    project_second_image = models.ImageField(upload_to='projects/%Y/%m/%d/', blank=True, null=True)
-    project_info = models.TextField(max_length=300)
-    categories = models.ForeignKey(CategoryModel, on_delete=models.CASCADE, verbose_name=_('category'), related_name='projects')
+    main_image = models.ImageField(upload_to='projects/main-image/%Y/%m/%d/')
+    luster_image = models.ImageField(upload_to='projects/luster/%Y/%m/%d/')
+    rotate_image = models.ImageField(upload_to='projects/rotate-image/%Y/%m/%d/')
+    size_image = models.ImageField(upload_to='projects/size/%Y/%m/%d/')
+    sizes = models.CharField(max_length=50)
+    project_info = models.TextField(max_length=500)
+    by = models.CharField(max_length=32)
+    by_whom_text = models.TextField(max_length=500)
+    categories = models.ForeignKey(CategoryModel, on_delete=models.CASCADE, verbose_name=_('category'), related_name='collections')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
 
@@ -47,10 +52,15 @@ class CollectionsCategoryModel(models.Model):
 
 class CollectionsModel(models.Model):
     title = models.CharField(max_length=50)
-    collection_image = models.ImageField(upload_to='collection/%Y/%m/%d/')
-    collection_second_image = models.ImageField(upload_to='projects/%Y/%m/%d/', blank=True, null=True)
-    collection_info = models.TextField(max_length=300)
-    categories = models.ForeignKey(CollectionsCategoryModel, on_delete=models.CASCADE, verbose_name=_('category'), related_name='projects')
+    main_image = models.ImageField(upload_to='collections/main-image/%Y/%m/%d/')
+    luster_image = models.ImageField(upload_to='collections/luster/%Y/%m/%d/')
+    rotate_image = models.ImageField(upload_to='collections/rotate-image/%Y/%m/%d/')
+    size_image = models.ImageField(upload_to='collections/size/%Y/%m/%d/')
+    sizes = models.CharField(max_length=50)
+    project_info = models.TextField(max_length=500)
+    by = models.CharField(max_length=32)
+    by_whom_text = models.TextField(max_length=500)
+    categories = models.ForeignKey(CollectionsCategoryModel, on_delete=models.CASCADE, verbose_name=_('category'), related_name='collection')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created_at'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('updated_at'))
 

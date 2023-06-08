@@ -14,10 +14,9 @@
             </p>
             <div class="buttons">
                 <button class="button sort-all active">ALL</button>
-                <button class="button sort-america">AMERICA</button>
-                <button class="button sort-asia">ASIA</button>
-                <button class="button sort-europe">EUROPE</button>
-                <button class="button sort-middleeast">MIDDLEEAST</button>
+                <button class="button sort-residential">Residential</button>
+                <button class="button sort-commercial">Commercial</button>
+                <button class="button sort-mosque">Mosque</button>
             </div>
 
             <div class="selected-container">
@@ -25,7 +24,7 @@
                     <div id="1" class="item {{ object.categories }}">
                         <div class="selected-column">
                             <a href="{% url 'detail-projects' pk=object.pk %}">
-                                <img src="{{ object.project_image.url }}" alt="">
+                                <img src="{{ object.main_image.url }}" alt="">
                                 <p class="selected-text">
                                     {{ object.title }}
                                 </p>

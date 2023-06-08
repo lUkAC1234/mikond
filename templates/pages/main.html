@@ -69,7 +69,7 @@
                 {% for object in projects %}
                 <div class="selected-column">
                     <a href="{% url 'detail-projects' pk=object.pk %}">
-                        <img src="{{ object.project_image.url }}" alt="">
+                        <img src="{{ object.main_image.url }}" alt="">
                         <p class="selected-text">
                             {{ object.title }}
                         </p>

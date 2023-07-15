@@ -16,8 +16,63 @@
     z-index: 100;
 }
 
-.nav>.nav-header {
-    display: inline;
+.nav-title {
+    display: flex;
+}
+
+.header-links,
+.header-links-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header-number-container,
+.header-mobile-number-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-bottom: 5px;
+
+    a {
+        color: #000;
+    }
+}
+
+.header-links,
+.header-links-mobile {
+    & {
+        margin-left: 32px;
+        display: flex;
+        gap: 5px;
+    }
+
+    div {
+        & {
+            display: grid;
+            place-content: center;
+            width: 32px;
+            height: 32px;
+            background: black;
+            border-radius: 50%;
+        }
+
+        i {
+            color: #fff;
+        }
+    }
+}
+
+.header-mobile-number-container {
+    margin-top: 1rem;
+    display: none;
+}
+
+.header-links-mobile {
+    display: none;
 }
 
 .nav>.nav-header>.nav-title img {
@@ -58,15 +113,14 @@
     display: none;
 }
 
-@media (max-width:1000px) {
+@media (max-width: 1285px) {
     .nav {
         height: 100px;
     }
     .nav>.nav-header>.nav-title img {
-        margin-top: 25px;
         width: 150px;
         height: 44px;
-        margin-left: 50px;
+        margin: 0.5rem 0 0.5rem 50px;
     }
     .nav>.nav-btn {
         display: inline-block;
@@ -79,7 +133,7 @@
         width: 50px;
         height: 50px;
         padding: 13px;
-        margin-top: 26px;
+        margin-top: 7px;
         cursor: pointer;
     }
     .nav>.nav-btn>label>span {
@@ -96,7 +150,7 @@
         height: 0px;
         transition: all 0.3s ease-in;
         overflow-y: hidden;
-        top: 68px;
+        top: 48px;
         left: 0px;
     }
     .nav>.nav-links>a,
@@ -134,5 +188,21 @@
 @media (max-width:1000px) {
     .second-header a img {
         margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .header-links,
+    .header-number-container {
+        display: none;
+    }
+
+    .header-links-mobile,
+    .header-mobile-number-container {
+        display: flex;
+    }
+
+    .nav>.nav-btn>label {
+        margin-top: 11px;
     }
 }

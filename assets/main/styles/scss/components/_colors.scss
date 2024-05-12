@@ -1,0 +1,10 @@
+$body: #121212;
+$black: #000;
+$primary-color: #FFCF7A;
+$extra-dark: #121212;
+:root {
+    --body: #{$body};
+    --black: #{$black};
+    --extra-dark: #{$extra-dark};
+    --primary-color: #{$primary-color};
+}

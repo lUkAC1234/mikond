@@ -1,4 +1,21 @@
 {% load static %}
 <header class="header">
-    
+    <nav class="header-nav">
+        <div class="header-logo-container">
+            <a href="">
+                <img src="{% static 'main/images/main-page/logo.jpg' %}" alt="">
+            </a>
+        </div>
+        <div class="header-links-container">
+            <ul class="header-links-wrapper">
+                <li class="header-link"><a href="">Каталог</a></li>
+                <li class="header-link"><a href="">Контакты</a></li>
+            </ul>
+            <div class="header-call-btn-container">
+                <a href="tel:+" class="header-call-btn">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
 </header>

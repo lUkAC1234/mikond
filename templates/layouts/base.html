@@ -10,12 +10,12 @@
     <meta property="og:description" content="#">
     <meta name="og:image" content="#">
     <meta name="keywords" content="#">
-    <link rel="shortcut icon" href="#" type="image/svg+xml"/>
+    <link rel="shortcut icon" href="#" type="image/svg+xml" />
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'main/scripts/js/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{% static 'main/styles/scss/global.css' %}">
-    
+
     {% block title %}{% endblock %}
 </head>
 
@@ -33,6 +33,26 @@
     {# Scripts #}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script src="{% static 'main/scripts/js/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const burgerBtn = document.getElementById('header-burger');
+            const linksContainer = document.getElementById('header-links-container');
+            const header = document.getElementById('main-header');
+
+            burgerBtn.addEventListener('click', function () {
+                linksContainer.classList.toggle('active');
+            });
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 40) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
     {% block js_block %}
 
     {% endblock %}

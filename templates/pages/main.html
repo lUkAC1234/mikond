@@ -4,6 +4,52 @@
 
 {% block title%}<title>Mikond - Homepage</title>{% endblock %}
 <main class="main">
-    
+    <div class="main-container">
+        <section class="main-section">
+            <div class="main-text-container">
+                <h1 class="main-title">БРА ЛЮСТРЫ СВЕТИЛЬНИКИ</h1>
+                <div class="main-icon-container">
+                    <div class="main-icon">
+                        <i class="fa-solid fa-gear"></i>
+                        <h2 class="main-icon-text">
+                            Свое производство
+                        </h2>
+                    </div>
+                    <div class="main-icon">
+                        <i class="fa-solid fa-plane-departure"></i>
+                        <h2 class="main-icon-text">
+                            Доставка в любую точку мира
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="main-part-image-container">
+                <img src="{% static 'main/images/main-page/mainImage.png' %}" alt="">
+            </div>
+        </section>
+
+        <section class="quality-section">
+            <div class="quality-container">
+                <h1 class="quality-title">ЛЮБАЯ ЛЮСТРА НА ЗАКАЗ</h1>
+                <div class="quality-img-container">
+                    <img src="{% static 'main/images/main-page/chandelier.png' %}" alt="">
+                </div>
+                <div class="quality-types-container">
+                    <div class="quality-types-column">
+                        <i class="fa-solid fa-fire"></i>
+                        <h2 class="quality-types-text">Качественная хрусталь</h2>
+                    </div>
+                    <div class="quality-types-column">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h2 class="quality-types-text">Прочный металл</h2>
+                    </div>
+                    <div class="quality-types-column">
+                        <i class="fa-solid fa-shield"></i>
+                        <h2 class="quality-types-text">Устойчивые крепления</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 {% endblock %}

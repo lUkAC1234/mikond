@@ -1,0 +1,43 @@
+{% load static %}
+<section class="contact-section">
+    <div class="contact-container">
+        <button class="contact-button" id="contact-button">
+            <i class="fa-solid fa-comment"></i>
+            Чат
+        </button>
+
+        <form action="" method="POST" class="contact-form" id="contact-form">
+            <h1 class="contact-form-title">Начать чат</h1>
+            <h2 class="contact-form-text">
+                Спасибо что используете наш сайт, как мы можем вам помочь ?
+            </h2>
+            <button type="button" class="contact-form-close" id="contact-form-close">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+            <div class="contact-form-container">
+                <div class="contact-form-column">
+                    <label for="contact-name" class="first">Имя</label>
+                    <input type="text" class="contact-form-input" id="contact-name" name="name" placeholder="Ваше имя">
+                </div>
+                <div class="contact-form-column">
+                    <label for="contact-email">Почта</label>
+                    <input type="text" class="contact-form-input" id="contact-email" name="email"
+                        placeholder="Ваша почта">
+                </div>
+                <div class="contact-form-column">
+                    <label for="contact-service">Нужный Сервис</label>
+                    <select class="contact-form-input" id="contact-service" name="service">
+                        <option value="" disabled selected>-</option>
+                        <option value="service1">Service 1</option>
+                        <option value="service2">Service 2</option>
+                        <option value="service3">Service 3</option>
+                    </select>
+                </div>
+                <div class="contact-form-column">
+                    <label for="contact-message">Message</label>
+                    <textarea name="message" id="contact-message" placeholder="Ваше сообщение"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

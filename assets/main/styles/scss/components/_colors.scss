@@ -3,10 +3,12 @@ $black: #000;
 $primary-color: #FFCF7A;
 $extra-dark: #121212;
 $white: #ffffff;
+$gray: #757575;
 :root {
     --body: #{$body};
     --black: #{$black};
     --extra-dark: #{$extra-dark};
     --primary-color: #{$primary-color};
     --white: #{$white};
+    --gray: #{$gray};
 }

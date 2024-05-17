@@ -1,6 +1,7 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
+{% include 'layouts/chat.html' %}
 
 {% block title%}<title>Mikond - Homepage</title>{% endblock %}
 <main class="main">
@@ -36,7 +37,7 @@
                 </div>
                 <div class="quality-types-container">
                     <div class="quality-types-column">
-                        <i class="fa-solid fa-fire"></i>
+                        <i class="fa-regular fa-gem"></i>
                         <h2 class="quality-types-text">Качественная хрусталь</h2>
                     </div>
                     <div class="quality-types-column">
@@ -97,7 +98,7 @@
                             <h2 class="product-first-short-description">
                                 Лицевая панель из жаропрочной нержавеющей стали толщиной 5 мм
                             </h2>
-                            <img src="{% static 'main/images/main-page/chandelier.png' %}" alt="">
+                            <img src="{% static 'main/images/main-page/mainImage.png' %}" alt="">
                         </div>
                         <div class="product-first-detail">
                             <h1 class="product-first-detail-title">

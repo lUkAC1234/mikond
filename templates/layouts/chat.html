@@ -2,41 +2,58 @@
 <section class="contact-section">
     <div class="contact-container">
         <button class="contact-button" id="contact-button">
-            <i class="fa-solid fa-comment"></i>
+            <i class="fa-regular fa-comment"></i>
             Чат
         </button>
 
-        <form action="" method="POST" class="contact-form" id="contact-form">
-            <h1 class="contact-form-title">Начать чат</h1>
-            <h2 class="contact-form-text">
-                Спасибо что используете наш сайт, как мы можем вам помочь ?
-            </h2>
+        <form method="POST" class="contact-form" id="contact-form">
+            {% csrf_token %}
+            <h1 class="contact-form-title">Отправить сообщение</h1>
             <button type="button" class="contact-form-close" id="contact-form-close">
                 <i class="fa-solid fa-minus"></i>
             </button>
             <div class="contact-form-container">
+                <h2 class="contact-form-text">
+                    Спасибо что используете наш сайт, как мы можем вам помочь?
+                </h2>
                 <div class="contact-form-column">
                     <label for="contact-name" class="first">Имя</label>
-                    <input type="text" class="contact-form-input" id="contact-name" name="name" placeholder="Ваше имя">
+                    <input type="text" class="contact-form-input" id="contact-name" name="name" placeholder="Ваше имя" value="{{ form.name.value|default_if_none:'' }}">
+                    {% if form.name.errors %}
+                    <p class="error-message">{{ form.name.errors }}</p>
+                    {% endif %}
                 </div>
                 <div class="contact-form-column">
                     <label for="contact-email">Почта</label>
-                    <input type="text" class="contact-form-input" id="contact-email" name="email"
-                        placeholder="Ваша почта">
+                    <input type="email" class="contact-form-input" id="contact-email" name="email"
+                        placeholder="Ваша почта" value="{{ form.email.value|default_if_none:'' }}">
+                        {% if form.email.errors %}
+                        <p class="error-message">{{ form.email.errors }}</p>
+                        {% endif %}
                 </div>
                 <div class="contact-form-column">
                     <label for="contact-service">Нужный Сервис</label>
                     <select class="contact-form-input" id="contact-service" name="service">
-                        <option value="" disabled selected>-</option>
-                        <option value="service1">Service 1</option>
-                        <option value="service2">Service 2</option>
-                        <option value="service3">Service 3</option>
+                        <option value="" disabled {% if not form.service.value %}selected{% endif %}>-</option>
+                        {% for option in service_options %}
+                            <option value="{{ option.id }}" {% if form.service.value == option.id %}selected{% endif %}>{{ option.name }}</option>
+                        {% endfor %}
                     </select>
+                    {% if form.service.errors %}
+                    <p class="error-message">{{ form.service.errors }}</p>
+                    {% endif %}
                 </div>
                 <div class="contact-form-column">
-                    <label for="contact-message">Message</label>
-                    <textarea name="message" id="contact-message" placeholder="Ваше сообщение"></textarea>
+                    <label for="contact-message">Сообщение</label>
+                    <textarea name="message" id="contact-message" placeholder="Ваше сообщение">{{ form.message.value|default_if_none:'' }}</textarea>
+                    {% if form.message.errors %}
+                    <p class="error-message">{{ form.message.errors }}</p>
+                    {% endif %}
                 </div>
+            </div>
+            <div class="contact-submit-btn-container">
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <button type="submit" class="contact-submit-btn">Отправить</button>
             </div>
         </form>
     </div>

@@ -12,6 +12,7 @@
     padding: 0;
     list-style: none;
     user-select: none;
+    outline: none;
 }
 
 html {
@@ -20,13 +21,48 @@ html {
 
     body {
         scroll-behavior: smooth;
-        background-color: var(--body);
     }
 
     a {
         text-decoration: none;
-        color: #fff;
+        color: var(--white);
     }
+}
+
+// HEADER-CONTENT-FOOTER POSITIONS 
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--body);
+    overflow-x: hidden;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue), 90%, 90%);
+    --fg: hsl(var(--hue), 90%, 10%);
+    --trans-dur: 0.3s;
+    font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
 }
 
 ::-webkit-scrollbar {

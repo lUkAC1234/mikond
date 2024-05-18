@@ -94,81 +94,62 @@
                 <div class="product-first-container">
                     <div class="product-first-image-container">
                         <div class="product-first-image-column">
-                            <h1 class="product-first-title">Топливный блок</h1>
+                            <h1 class="product-first-title">{{ service_first.title }}</h1>
                             <h2 class="product-first-short-description">
-                                Лицевая панель из жаропрочной нержавеющей стали толщиной 5 мм
+                                {{ service_first.short_detail }}
                             </h2>
-                            <img src="{% static 'main/images/main-page/mainImage.png' %}" alt="">
+                            <img src="{{ service_first.image.url }}" alt="">
                         </div>
                         <div class="product-first-detail">
                             <h1 class="product-first-detail-title">
-                                Очаги для встраивания в нишу по Вашим размерам
+                                {{ service_first.title }}
                             </h1>
                             <p class="product-first-detail-text">
-                                Короб выполненый из нержавеющей стали 2 мм или холоднокатанной стали 3 мм Окрашен
-                                кремнийорганической и акриловой краской
-                                Каждый комплектуется керамическим матом
-                                Лучшая теплоизолированость из доступных
-                                Изготавливается исключительно под Ваши размеры
-                                Наши технологи спроектируют техническое задание для ниши учитывая
-                                особенности Вашего ремонта.
-                                Размер ограничен только Вашей фантазией
-                                Отделка стемалитом и цветными металлами
+                                {{ service_first.detail }}
                             </p>
                         </div>
                     </div>
                     <div class="product-first-text-container">
                         <h2 class="product-first-types">Варианты отделки</h2>
                         <ul class="product-first-type-container">
-                            <li class="product-first-type-list">керамика</li>
-                            <li class="product-first-type-list">керамика</li>
-                            <li class="product-first-type-list">керамика</li>
-                            <li class="product-first-type-list">керамика</li>
+                            {% for option in service_first.options.all %}
+                            <li class="product-first-type-list">{{ option.name }}</li>
+                            {% endfor %}
                         </ul>
                         <h2 class="product-first-standart">Стандартная комплектация</h2>
                         <div class="product-first-standart-wrapper">
                             <ul class="product-first-standart-container">
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
-                                <li class="product-first-standart-list">Датчик температуры</li>
+                                {% for standart in service_first.standard_equipment.all %}
+                                <li class="product-first-standart-list">{{ standart.name }}</li>
+                                {% endfor %}
                             </ul>
-                            <div class="product-slider-column first">
-                                <img src="{% static 'main/images/main-page/chandelier.png' %}" alt="">
-                            </div>
+                            {% for service in services %}
+                                {% if forloop.counter > 1 and forloop.counter <= 2 and service.pk != service_first.pk %}
+                                    <a href="{% url 'main:service' pk=service.pk %}"
+                                    class="product-slider-column first">
+                                        <img src="{{ service.image.url }}" alt="">
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
                 <div class="product-slider-container">
-                    <div class="product-slider-column">
-                        <h1 class="product-slider-title">Готовые решения</h1>
-                        <p class="product-slider-short-description">
-                            Напольные отдельно стоящие камины.
-                            Настенные очаги которые вешаются как ТВ. Подвесные модели.
-                        </p>
-                        <div class="product-image-column">
-                            <img src="{% static 'main/images/main-page/mainImage.png' %}" alt="">
-                        </div>
-                    </div>
-                    <div class="product-slider-column">
-                        <h1 class="product-slider-title">Аксессуары</h1>
-                        <p class="product-slider-short-description">
-                            Защитные экраны, Дверцы, Стемалит, Дрова,
-                            Камни, Кастомные пульты
-                        </p>
-                        <div class="product-image-column">
-                            <img src="{% static 'main/images/main-page/bra.png' %}" alt="">
-                        </div>
-                    </div>
+                    {% for service in services %}
+                        {% if forloop.counter >= 3 and forloop.counter <= 4 %} 
+                            <a href="{% url 'main:service' pk=service.pk %}">
+                                <div class="product-slider-column">
+                                    <h1 class="product-slider-title">{{ service.title }}</h1>
+                                    <p class="product-slider-short-description">
+                                        {{ service.short_detail }}
+                                    </p>
+                                    <div class="product-image-column">
+                                        <img src="{{ service.image.url }}" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </section>

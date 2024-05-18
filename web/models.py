@@ -11,17 +11,29 @@ class ServiceOption(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta: 
+        verbose_name = "Service Option"
+        verbose_name_plural = "Service Options"
+    
 class DetailsOption(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
     
+    class Meta: 
+        verbose_name = "Details Option"
+        verbose_name_plural = "Details Options"
+    
 class StandartOption(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
+    
+    class Meta: 
+        verbose_name = "Standard Option"
+        verbose_name_plural = "Standard Options"
 
 class ContactModel(models.Model):
     name = models.CharField(max_length=100)
@@ -31,6 +43,10 @@ class ContactModel(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta: 
+        verbose_name = "Contact Message"
+        verbose_name_plural = "Contact Messages"
     
 class ServiceModel(models.Model):
     title = models.CharField(max_length=100)
@@ -43,3 +59,8 @@ class ServiceModel(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta: 
+        verbose_name = "Service"
+        verbose_name_plural = "Services"
+        ordering = ['-id']

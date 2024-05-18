@@ -29,8 +29,8 @@
 
 .header-logo-container {
     img {
-        width: 4rem;
-        height: 4.25rem;
+        width: 3rem;
+        height: 3.25rem;
         object-fit: contain;
     }
 }
@@ -46,7 +46,7 @@
     gap: 2rem;
 
     .header-link {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-family: var(--roboto);
         text-transform: uppercase;
 
@@ -65,8 +65,8 @@
     display: grid;
     place-items: center;
     background: linear-gradient(63deg, rgba(249, 139, 77, 1) 21%, rgba(236, 207, 148, 1) 80%, rgba(255, 217, 196, 1) 100%);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 2px;
 
     .header-call-btn {
@@ -78,6 +78,7 @@
 
 
         i {
+            font-size: 0.9rem;
             color: var(--extra-dark);
         }
     }
@@ -135,16 +136,16 @@ body {
         }
 
         .header-link {
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-align: center;
         }
 
         .header-call-btn-container {
-            width: 5rem;
-            height: 5rem;
+            width: 4rem;
+            height: 4rem;
 
             i {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }

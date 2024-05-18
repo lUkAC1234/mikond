@@ -1,0 +1,74 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+
+{% block title%}<title>Mikond - Service</title>{% endblock %}
+<main class="main">
+    <div class="main-container">
+        <section class="product-section">
+            <div class="product-container">
+                <div class="product-first-container">
+                    <div class="product-first-image-container">
+                        <div class="product-first-image-column">
+                            <h1 class="product-first-title">{{ object.title }}</h1>
+                            <h2 class="product-first-short-description">
+                                {{ object.short_detail }}
+                            </h2>
+                            <img src="{{ object.image.url }}" alt="">
+                        </div>
+                        <div class="product-first-detail">
+                            <h1 class="product-first-detail-title">
+                                {{ object.title }}
+                            </h1>
+                            <p class="product-first-detail-text">
+                                {{ object.detail }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="product-first-text-container">
+                        <h2 class="product-first-types">Варианты отделки</h2>
+                        <ul class="product-first-type-container">
+                            {% for option in object.options.all %}
+                            <li class="product-first-type-list">{{ option.name }}</li>
+                            {% endfor %}
+                        </ul>
+                        <h2 class="product-first-standart">Стандартная комплектация</h2>
+                        <div class="product-first-standart-wrapper">
+                            <ul class="product-first-standart-container">
+                                {% for standart in object.standard_equipment.all %}
+                                <li class="product-first-standart-list">{{ standart.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% for service in services %}
+                                {% if forloop.counter > 1 and forloop.counter <= 2 and service.pk != object.pk %}
+                                    <a href="{% url 'main:service' pk=service.pk %}"
+                                    class="product-slider-column first">
+                                        <img src="{{ service.image.url }}" alt="">
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="product-slider-container">
+                    {% for service in services %}
+                        {% if forloop.counter >= 3 and forloop.counter <= 4 %} 
+                            <a href="{% url 'main:service' pk=service.pk %}">
+                                <div class="product-slider-column">
+                                    <h1 class="product-slider-title">{{ service.title }}</h1>
+                                    <p class="product-slider-short-description">
+                                        {{ service.short_detail }}
+                                    </p>
+                                    <div class="product-image-column">
+                                        <img src="{{ service.image.url }}" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

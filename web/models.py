@@ -64,3 +64,16 @@ class ServiceModel(models.Model):
         verbose_name = "Service"
         verbose_name_plural = "Services"
         ordering = ['-id']
+
+class OurWorksModel(models.Model):
+    title = models.CharField(max_length=100)
+    preview_image = models.ImageField(upload_to='ourwork/preview/%Y/%m/%d/')
+    short_description = models.CharField(max_length=300)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta: 
+        verbose_name = "Our work"
+        verbose_name_plural = "Our works"
+        ordering = ['-id']

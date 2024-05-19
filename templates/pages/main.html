@@ -4,19 +4,21 @@
 {% include 'layouts/chat.html' %}
 
 {% block title%}<title>Mikond - Homepage</title>{% endblock %}
-<main class="main">
+<main class="main index">
     <div class="main-container">
         <section class="main-section">
             <div class="main-text-container">
-                <h1 class="main-title">БРА <br> ЛЮСТРЫ СВЕТИЛЬНИКИ</h1>
+                <h1 class="main-title first fade fadeInRight" data-wow-duration="0.8s">БРА</h1>
+                <h1 class="main-title fade fadeInRight" data-wow-duration="1.2s">ЛЮСТРЫ</h1>
+                <h1 class="main-title fade fadeInRight" data-wow-duration="1.6s">СВЕТИЛЬНИКИ</h1>
                 <div class="main-icon-container">
-                    <div class="main-icon">
+                    <div class="main-icon fade fadeInUp">
                         <i class="fa-solid fa-gear"></i>
                         <h2 class="main-icon-text">
                             Свое производство
                         </h2>
                     </div>
-                    <div class="main-icon">
+                    <div class="main-icon fade fadeInUp">
                         <i class="fa-solid fa-plane-departure"></i>
                         <h2 class="main-icon-text">
                             Доставка в любую точку мира
@@ -24,29 +26,29 @@
                     </div>
                 </div>
             </div>
-            <div class="main-part-image-container">
+            <div class="main-part-image-container fade fadeInRight">
                 <img src="{% static 'main/images/main-page/mainImage.png' %}" alt="">
             </div>
         </section>
 
         <section class="quality-section">
             <div class="quality-container">
-                <h1 class="quality-title">ЛЮБАЯ ЛЮСТРА НА ЗАКАЗ</h1>
-                <div class="quality-img-container">
+                <h1 class="quality-title fade fadeInUp">ЛЮБАЯ ЛЮСТРА НА ЗАКАЗ</h1>
+                <div class="quality-img-container fade slideInRight" data-wow-duration="1s">
                     <img src="{% static 'main/images/main-page/chandelier.png' %}" alt="">
                 </div>
                 <div class="quality-types-container">
                     <div class="quality-types-column">
-                        <i class="fa-regular fa-gem"></i>
-                        <h2 class="quality-types-text">Качественная хрусталь</h2>
+                        <i class="fa-regular fa-gem fade fadeInDown"></i>
+                        <h2 class="quality-types-text fade fadeInUp">Качественная хрусталь</h2>
                     </div>
                     <div class="quality-types-column">
-                        <i class="fa-solid fa-bolt"></i>
-                        <h2 class="quality-types-text">Прочный металл</h2>
+                        <i class="fa-solid fa-bolt fade fadeInDown"></i>
+                        <h2 class="quality-types-text fade fadeInUp">Прочный металл</h2>
                     </div>
                     <div class="quality-types-column">
-                        <i class="fa-solid fa-shield"></i>
-                        <h2 class="quality-types-text">Устойчивые крепления</h2>
+                        <i class="fa-solid fa-shield fade fadeInDown"></i>
+                        <h2 class="quality-types-text fade fadeInUp">Устойчивые крепления</h2>
                     </div>
                 </div>
             </div>
@@ -54,7 +56,7 @@
 
         <section class="bra-section">
             <div class="bra-container">
-                <div class="bra-text-column">
+                <div class="bra-text-column fade fadeInLeft">
                     <h1 class="bra-title">БРА</h1>
                     <p class="bra-text">
                         Бра (от французского bras): Это осветительное устройство, устанавливаемое на стену <br><br>
@@ -63,7 +65,7 @@
                         вверх, вниз или в сторону.
                     </p>
                 </div>
-                <div class="bra-image-column">
+                <div class="bra-image-column fade fadeInRight">
                     <img src="{% static 'main/images/main-page/bra.png' %}" alt="">
                 </div>
             </div>
@@ -71,10 +73,10 @@
 
         <section class="lamps-section">
             <div class="lamps-container">
-                <div class="lamps-image-column">
+                <div class="lamps-image-column fade fadeInLeft">
                     <img src="{% static 'main/images/main-page/lamp.png' %}" alt="">
                 </div>
-                <div class="lamps-text-column">
+                <div class="lamps-text-column fade fadeInRight">
                     <h1 class="lamps-title">Светильники</h1>
                     <p class="lamps-text">
                         Светильник - это функциональное осветительное устройство, которое используется для распределения
@@ -93,14 +95,14 @@
             <div class="product-container">
                 <div class="product-first-container">
                     <div class="product-first-image-container">
-                        <div class="product-first-image-column">
+                        <div class="product-first-image-column fade fadeInLeft">
                             <h1 class="product-first-title">{{ service_first.title }}</h1>
                             <h2 class="product-first-short-description">
                                 {{ service_first.short_detail }}
                             </h2>
                             <img src="{{ service_first.image.url }}" alt="">
                         </div>
-                        <div class="product-first-detail">
+                        <div class="product-first-detail fade fadeInRight">
                             <h1 class="product-first-detail-title">
                                 {{ service_first.title }}
                             </h1>
@@ -110,23 +112,23 @@
                         </div>
                     </div>
                     <div class="product-first-text-container">
-                        <h2 class="product-first-types">Варианты отделки</h2>
+                        <h2 class="product-first-types fade fadeInDown">Варианты отделки</h2>
                         <ul class="product-first-type-container">
                             {% for option in service_first.options.all %}
-                            <li class="product-first-type-list">{{ option.name }}</li>
+                            <li class="product-first-type-list fade fadeInLeft">{{ option.name }}</li>
                             {% endfor %}
                         </ul>
-                        <h2 class="product-first-standart">Стандартная комплектация</h2>
+                        <h2 class="product-first-standart fade fadeInDown">Стандартная комплектация</h2>
                         <div class="product-first-standart-wrapper">
                             <ul class="product-first-standart-container">
                                 {% for standart in service_first.standard_equipment.all %}
-                                <li class="product-first-standart-list">{{ standart.name }}</li>
+                                <li class="product-first-standart-list fade fadeInLeft">{{ standart.name }}</li>
                                 {% endfor %}
                             </ul>
                             {% for service in services %}
                                 {% if forloop.counter > 1 and forloop.counter <= 2 and service.pk != service_first.pk %}
                                     <a href="{% url 'main:service' pk=service.pk %}"
-                                    class="product-slider-column first">
+                                    class="product-slider-column first fade fadeInDown">
                                         <img src="{{ service.image.url }}" alt="">
                                     </a>
                                 {% endif %}
@@ -139,11 +141,11 @@
                         {% if forloop.counter >= 3 and forloop.counter <= 4 %} 
                             <a href="{% url 'main:service' pk=service.pk %}">
                                 <div class="product-slider-column">
-                                    <h1 class="product-slider-title">{{ service.title }}</h1>
-                                    <p class="product-slider-short-description">
+                                    <h1 class="product-slider-title fade fadeInDown">{{ service.title }}</h1>
+                                    <p class="product-slider-short-description fade fadeInDown">
                                         {{ service.short_detail }}
                                     </p>
-                                    <div class="product-image-column">
+                                    <div class="product-image-column fade fadeInDown">
                                         <img src="{{ service.image.url }}" alt="">
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import UserModel, ContactModel, ServiceOption, \
-StandartOption, DetailsOption, ServiceModel
+StandartOption, DetailsOption, ServiceModel, OurWorksModel
 # User Model Admin
 @admin.register(UserModel)
 class UserAdmin(admin.ModelAdmin):
@@ -30,6 +30,16 @@ class StandartAdmin(admin.ModelAdmin):
     list_display_links = ['id', 'name']
     search_fields = ['name']
 
+@admin.register(OurWorksModel)
+class OurWorksAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title']
+    list_display_links = ['id', 'title']
+    search_fields = ['title']
+
 @admin.register(ContactModel)
 class ContactModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'service', 'message')
+
+
+admin.site.site_header = 'Mikond Administration'
+admin.site.site_title = 'Mikond'

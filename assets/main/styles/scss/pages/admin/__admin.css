@@ -2,13 +2,11 @@
 /* Base Colors */
 :root {
 
-  --primary-color: #000;
-  --purple: #FFCF7A;
-  --light-gray: #757575;
-  --light-purple: purple
-  --yellow: #FFDA58;
+  --primary-color: #FFCF7A;
+  --extra-dark: #121212;
   --white: #fff;
   --input-background: #D8E0F0;
+  --gray: #757575;
   --poppins: "Poppins", "sans-serif";
 }
 
@@ -24,7 +22,7 @@ div.help,
 h1,
 h2,
 li {
-  color: var(--primary-color) !important;
+  color: var(--white) !important;
   font-family: var(--poppins) !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
@@ -34,7 +32,7 @@ body {
   background: linear-gradient(0deg, rgba(255,207,122,1) 0%, rgba(18,18,18,1) 100%);
 }
 body #container #header {
-  background: var(--purple);
+  background: var(--primary-color);
   font-family: var(--poppins);
   font-weight: 500;
 }
@@ -43,11 +41,11 @@ body #container #header #site-name a {
   font-size: 1.5rem !important;
 }
 body #container .breadcrumbs {
-  background: var(--primary-color);
+  background: var(--extra-dark);
   font-family: var(--poppins);
   font-weight: 500;
   font-size: 1.1rem;
-  color: var(--light-gray);
+  color: var(--gray);
 }
 body #container .breadcrumbs a {
   color: var(--white);
@@ -61,30 +59,30 @@ body #container .shifted .sticky #nav-filter {
   font-size: 1rem;
   font-family: var(--poppins);
   font-weight: 500;
-  border-bottom: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  border-bottom: 2px solid var(--extra-dark);
+  color: var(--extra-dark);
 }
 body #container .shifted .sticky #nav-filter:focus {
-  border-bottom: 2px solid var(--purple);
+  border-bottom: 2px solid var(--primary-color);
 }
 body #container .shifted .messagelist .success {
-  background-color: var(--purple);
+  background-color: var(--primary-color);
   font-size: 1rem;
   font-weight: 500;
   color: var(--white);
 }
 body #container .shifted .messagelist .success a {
-  color: var(--primary-color);
+  color: var(--extra-dark);
 }
 
 .toggle-nav-sidebar {
-  background: var(--primary-color);
+  background: var(--extra-dark);
   color: var(--white);
   border: none;
   outline: none;
 }
 .toggle-nav-sidebar:hover, .toggle-nav-sidebar:focus {
-  background: var(--primary-color);
+  background: var(--extra-dark);
 }
 
 #content {
@@ -94,7 +92,7 @@ body #container .shifted .messagelist .success a {
 }
 #content .errorlist,
 #content .errornote {
-  background: var(--purple);
+  background: var(--primary-color);
   margin-inline: 0;
   border-radius: 0.2rem;
   border: none;
@@ -107,34 +105,34 @@ body #container .shifted .messagelist .success a {
   text-align: center;
 }
 #content .app-web tr {
-  background: var(--white);
+  background: var(--extra-dark);
 }
 #content .app-web tr th,
 #content .app-web tr td,
 #content .app-web tr a {
   border: none;
-  color: var(--purple);
+  color: var(--primary-color);
   font-family: var(--poppins);
 }
 #content #change-history .paginator {
   width: max-content;
-  background: var(--primary-color);
+  background: var(--extra-dark);
   font-family: var(--poppins);
   margin-top: 0.5rem;
   border-radius: 0 0 0 0.5rem;
 }
 #content #change-history thead th {
-  background: var(--primary-color);
+  background: var(--extra-dark);
   font-family: var(--poppins);
 }
 #content #change-history tr {
   font-family: var(--poppins);
 }
 #content #change-history tr:nth-child(odd) {
-  background: var(--purple);
+  background: var(--primary-color);
 }
 #content #change-history tr:nth-child(even) {
-  color: var(--primary-color);
+  color: var(--extra-dark);
   background: var(--white);
 }
 #content #change-history tr th,
@@ -143,24 +141,24 @@ body #container .shifted .messagelist .success a {
   border: none;
 }
 #content #deleted-objects a {
-  color: var(--purple);
+  color: var(--primary-color);
   font-size: 1.25rem;
 }
 #content form div:has(.cancel-link) input[type=submit] {
-  background: var(--purple);
+  background: var(--primary-color);
   font-family: var(--poppins);
   height: fit-content;
 }
 #content form div:has(.cancel-link) .cancel-link {
   background: var(--white);
   font-family: var(--poppins);
-  color: var(--purple);
+  color: var(--primary-color);
   padding-block: 0.75rem;
 }
 #content .historylink,
 #content .object-tools a:link,
 #content .object-tools a:visited {
-  background-color: var(--primary-color);
+  background-color: var(--extra-dark);
   font-family: var(--poppins);
   font-weight: 500;
   color: var(--white);
@@ -169,7 +167,7 @@ body #container .shifted .messagelist .success a {
   background: transparent;
 }
 #content #recent-actions-module {
-  background: var(--white);
+  background: var(--extra-dark);
   padding-bottom: 0.5rem;
 }
 #content #recent-actions-module h1,
@@ -177,20 +175,20 @@ body #container .shifted .messagelist .success a {
 #content #recent-actions-module li,
 #content #recent-actions-module h2,
 #content #recent-actions-module span {
-  color: var(--primary-color) !important;
+  color: var(--gray) !important;
   font-size: 1rem;
 }
 #content #recent-actions-module span {
   font-size: 0.8rem;
 }
 #content #recent-actions-module a {
-  color: var(--purple);
+  color: var(--white);
 }
 #content #changelist {
   background: transparent;
 }
 #content #changelist #toolbar {
-  background: var(--primary-color);
+  background: var(--extra-dark);
 }
 #content #changelist #toolbar div {
   display: flex;
@@ -199,7 +197,7 @@ body #container .shifted .messagelist .success a {
 #content #changelist #toolbar div input,
 #content #changelist #toolbar div label {
   background: var(--white);
-  color: var(--primary-color);
+  color: var(--extra-dark);
   font-family: var(--poppins);
   font-size: 0.9rem;
   border: none;
@@ -208,7 +206,7 @@ body #container .shifted .messagelist .success a {
 }
 #content #changelist #toolbar div input[type=submit] {
   color: var(--white);
-  background: var(--purple);
+  background: var(--primary-color);
 }
 #content #changelist #toolbar div label {
   display: flex;
@@ -219,7 +217,7 @@ body #container .shifted .messagelist .success a {
 }
 #content #changelist #changelist-form .actions,
 #content #changelist #changelist-form .paginator {
-  background: var(--primary-color);
+  background: var(--extra-dark);
   font-family: var(--poppins);
   color: var(--white);
   border-radius: 0.25rem;
@@ -241,20 +239,20 @@ body #container .shifted .messagelist .success a {
 }
 #content #changelist #changelist-form .actions select,
 #content #changelist #changelist-form .paginator select {
-  color: var(--primary-color);
+  color: var(--extra-dark);
 }
 #content #changelist #changelist-form .actions button,
 #content #changelist #changelist-form .paginator button {
-  background: var(--purple);
+  background: var(--primary-color);
   color: var(--white);
 }
 #content #changelist #changelist-form .results thead tr,
 #content #changelist #changelist-form .results thead th,
 #content #changelist #changelist-form .results thead td {
-  background: var(--primary-color);
+  background: var(--extra-dark);
 }
 #content #changelist #changelist-form .results tr {
-  background: var(--purple);
+  background: var(--primary-color);
   border-radius: 0.25rem;
   margin-block: 0.5rem;
 }
@@ -269,14 +267,15 @@ body #container .shifted .messagelist .success a {
 .module {
   background: var(--white);
   border-radius: 0.5rem;
+  color: var(--extra-dark);
 }
 .module caption {
-  background: var(--purple);
+  background: var(--primary-color);
   font-family: var(--poppins);
   font-weight: 500;
 }
 .module .model-group {
-  background: var(--purple);
+  background: var(--primary-color);
 }
 .module .model-group a {
   color: var(--white);
@@ -295,7 +294,7 @@ body #container .shifted .messagelist .success a {
   display: block;
 }
 .module .form-row .flex-container label {
-  color: var(--primary-color);
+  color: var(--extra-dark);
   font-size: 1rem;
 }
 .module .form-row .flex-container input,
@@ -303,7 +302,7 @@ body #container .shifted .messagelist .success a {
   border: 1px solid var(--input-background);
   background: none;
   outline: none;
-  color: var(--primary-color);
+  color: var(--extra-dark);
   font-family: var(--poppins);
   font-weight: 500;
   width: calc(100% - 10px);
@@ -313,7 +312,7 @@ body #container .shifted .messagelist .success a {
 }
 .module .form-row .flex-container input:focus,
 .module .form-row .flex-container textarea:focus {
-  border-color: var(--primary-color);
+  border-color: var(--extra-dark);
   transition: all 0.4s;
 }
 .module .form-row .flex-container textarea {
@@ -324,15 +323,15 @@ body #container .shifted .messagelist .success a {
   min-width: max-content;
 }
 .module .form-row .flex-container .file-upload {
-  color: var(--primary-color);
+  color: var(--extra-dark);
   font-family: var(--poppins);
   font-weight: 500;
 }
 .module .form-row .flex-container .file-upload a {
-  color: var(--purple);
+  color: var(--primary-color);
 }
 .module .form-row .flex-container select {
-  background: var(--purple);
+  background: var(--primary-color);
   color: var(--white);
   font-family: var(--poppins);
   font-weight: 500;
@@ -340,14 +339,14 @@ body #container .shifted .messagelist .success a {
   outline: none;
 }
 .module .form-row .flex-container select option {
-  background: var(--primary-color);
+  background: var(--extra-dark);
 }
 .module .form-row .flex-container select option:checked {
-  color: var(--purple);
+  color: var(--primary-color);
   background: var(--white);
 }
 .module .form-row .flex-container .readonly a {
-  color: var(--purple);
+  color: var(--primary-color);
 }
 @media (max-width: 767px) {
   .module .form-row {
@@ -362,7 +361,7 @@ body #container .shifted .messagelist .success a {
 }
 
 .submit-row {
-  background: var(--purple) !important;
+  background: var(--primary-color) !important;
   border: none !important;
 }
 .submit-row .button,
@@ -372,7 +371,7 @@ body #container .shifted .messagelist .success a {
 .submit-row a.button,
 .submit-row .deletelink {
   background: var(--white);
-  color: var(--primary-color);
+  color: var(--extra-dark);
   font-family: var(--poppins);
   font-weight: 500;
   border: 1px solid transparent;
@@ -390,31 +389,31 @@ body #container .shifted .messagelist .success a {
 .submit-row .deletelink:hover,
 .submit-row .deletelink:focus {
   color: var(--white);
-  background: var(--primary-color);
+  background: var(--extra-dark);
   transition: all 0.4s;
 }
 .submit-row .default {
-  background: var(--primary-color) !important;
+  background: var(--extra-dark) !important;
   color: var(--white) !important;
 }
 .submit-row .default:hover {
-  border: 1px solid var(--primary-color) !important;
-  color: var(--primary-color) !important;
+  border: 1px solid var(--extra-dark) !important;
+  color: var(--extra-dark) !important;
   background: var(--white) !important;
 }
 .submit-row .deletelink {
-  background: var(--primary-color) !important;
+  background: var(--extra-dark) !important;
 }
 
 .main.shifted > #nav-sidebar {
   background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(255,207,122,1) 100%);
-  border-color: var(--primary-color);
+  border-color: var(--extra-dark);
 }
 .main.shifted > #nav-sidebar .app-web {
   background: transparent;
 }
 .main.shifted > #nav-sidebar .app-web table caption {
-  background: var(--primary-color);
+  background: var(--extra-dark);
   font-family: var(--poppins);
   width: 90%;
   margin: 0.5rem auto;
@@ -429,7 +428,7 @@ body #container .shifted .messagelist .success a {
   margin: 0.5rem auto;
   border-radius: 0.25rem;
   width: 98%;
-  background: var(--purple);
+  background: var(--primary-color);
   font-family: var(--poppins);
 }
 .main.shifted > #nav-sidebar .app-web table tbody tr a {

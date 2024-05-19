@@ -126,4 +126,14 @@
     .footer-title {
         font-size: 2rem;
     }
+
+    .footer-contact {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer-contact-number {
+        font-size: 1.25rem;
+    }
 }

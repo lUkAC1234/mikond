@@ -1,21 +1,22 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
+{% include 'layouts/chat.html' %}
 
 {% block title%}<title>Mikond - Catalog</title>{% endblock %}
-<main class="main">
+<main class="main index">
     <div class="main-container">
         <section class="product-section">
             <div class="product-container">
                 <div class="product-slider-container">
-                    {% for service in object_list %}
+                    {% for service in services %}
                     <a href="{% url 'main:service' pk=service.pk %}">
                         <div class="product-slider-column">
-                            <h1 class="product-slider-title">{{ service.title }}</h1>
-                            <p class="product-slider-short-description">
+                            <h1 class="product-slider-title fade fadeInDown">{{ service.title }}</h1>
+                            <p class="product-slider-short-description fade fadeInDown">
                                 {{ service.short_detail }}
                             </p>
-                            <div class="product-image-column">
+                            <div class="product-image-column fade fadeInUp">
                                 <img src="{{ service.image.url }}" alt="">
                             </div>
                         </div>

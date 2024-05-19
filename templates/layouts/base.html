@@ -8,13 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="#">
     <meta property="og:description" content="#">
-    <meta name="og:image" content="#">
+    <meta property="og:image" content="{% static 'main/images/main-page/logo.png' %}">
     <meta name="keywords" content="#">
-    <link rel="shortcut icon" href="#" type="image/svg+xml" />
+    <link rel="shortcut icon" href="{% static 'main/images/main-page/logo.png' %}" type="image/png" />
+    <link rel="icon" href="{% static 'main/images/main-page/logo.png' %}" type="image/png">
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'main/scripts/js/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{% static 'main/styles/scss/global.css' %}">
+
+    <!-- Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <!-- Animation End -->
 
     {% block title %}{% endblock %}
 </head>
@@ -71,8 +76,30 @@
             const contactButton = document.getElementById('contact-button');
             const contactForm = document.getElementById('contact-form');
             const contactFormClose = document.getElementById('contact-form-close');
+            const footer = document.getElementById('footer');
 
-            // Show/hide form when the contact button is clicked
+            // Hide chat block initially
+            contactButton.style.display = 'none';
+            contactForm.style.display = 'none';
+
+            // Show/hide chat block based on scroll position
+            window.addEventListener('scroll', () => {
+                const footerRect = footer.getBoundingClientRect();
+                if (footerRect.top < window.innerHeight && footerRect.bottom >= 0) {
+                    // User has scrolled to the footer
+                    contactButton.style.display = 'none';
+                    contactForm.style.display = 'none';
+                } else {
+                    // User is not at the footer
+                    contactButton.style.display = 'block';
+                    // Check if the form is open and show it
+                    if (contactForm.style.display === 'block') {
+                        contactForm.style.display = 'block';
+                    }
+                }
+            });
+
+            // Toggle contact form when the contact button is clicked
             contactButton.addEventListener('click', () => {
                 if (contactForm.style.display === 'block') {
                     contactForm.style.display = 'none';
@@ -81,12 +108,36 @@
                 }
             });
 
-            // Hide form when the close button is clicked
+            // Close contact form when the close button is clicked
             contactFormClose.addEventListener('click', () => {
                 contactForm.style.display = 'none';
             });
+
+            // Close contact form when clicking outside the form
+            window.addEventListener('click', (event) => {
+                if (event.target !== contactButton && !contactForm.contains(event.target)) {
+                    contactForm.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
+
+    <!-- Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var wow = new WOW({
+                boxClass: 'fade', // animated element css class (default is wow)
+                animateClass: 'animated', // animation css class (default is animated)
+                offset: 0, // distance to the element when triggering the animation (default is 0)
+                mobile: true, // trigger animations on mobile devices (default is true)
+                live: true // act on asynchronously loaded content (default is true)
+            });
+            wow.init(); // Initialize WOW.js
         });
     </script>
+    <!-- Animations end -->
     {% block js_block %}
 
     {% endblock %}

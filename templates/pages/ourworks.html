@@ -17,7 +17,34 @@
         <section class="ourwork-list-section">
             <div class="ourwork-list-container">
                 {% for object in our_works %}
-                <a href="{% url 'main:ourworksdetail' pk=object.pk %}" class="ourwork-list-column">
+                <a href="" class="ourwork-list-column">
+                    <div class="ourwork-list-image-container fade fadeInUp">
+                        <img src="{{ object.preview_image.url }}" alt="">
+                    </div>
+                    <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
+                    <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
+                </a>
+                {% endfor %}
+                {% for object in our_works %}
+                <a href="" class="ourwork-list-column">
+                    <div class="ourwork-list-image-container fade fadeInUp">
+                        <img src="{{ object.preview_image.url }}" alt="">
+                    </div>
+                    <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
+                    <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
+                </a>
+                {% endfor %}
+                {% for object in our_works %}
+                <a href="" class="ourwork-list-column">
+                    <div class="ourwork-list-image-container fade fadeInUp">
+                        <img src="{{ object.preview_image.url }}" alt="">
+                    </div>
+                    <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
+                    <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
+                </a>
+                {% endfor %}
+                {% for object in our_works %}
+                <a href="" class="ourwork-list-column">
                     <div class="ourwork-list-image-container fade fadeInUp">
                         <img src="{{ object.preview_image.url }}" alt="">
                     </div>

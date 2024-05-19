@@ -176,9 +176,9 @@
 .quality-img-container::after {
   content: "";
   position: absolute;
-  width: min(100%, 100rem);
-  height: 10rem;
-  top: 40%;
+  width: min(100%, 50rem);
+  height: 5rem;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 300px;
@@ -521,7 +521,6 @@
   margin-top: -13.5rem;
   height: 20rem;
   background: var(--black);
-  border: 10px solid var(--primary-color);
 }
 .product-slider-column.first img {
   width: 100%;
@@ -574,7 +573,6 @@
   height: 20rem;
   margin-top: 3rem;
   flex-shrink: 0;
-  border: 10px solid var(--primary-color);
 }
 .product-image-column img {
   width: 100%;

@@ -65,10 +65,6 @@ class ourWorksView(CreateView):
         context = self.get_context_data(form=form)
         return self.render_to_response(context)
     
-class ourWorksDetailView(DetailView):
-    template_name = "pages/ourworks.detail.html"
-    model = OurWorksModel
-
 def PageNotFound(request, *args, **kwargs):
     text = render_to_string('pages/page404.html')
     return HttpResponseNotFound(text)

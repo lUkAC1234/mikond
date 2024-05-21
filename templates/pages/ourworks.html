@@ -17,43 +17,34 @@
         <section class="ourwork-list-section">
             <div class="ourwork-list-container">
                 {% for object in our_works %}
-                <a href="" class="ourwork-list-column">
+                <div class="ourwork-list-column" 
+                     data-extra-image="{% if object.extra_image %}{{ object.extra_image.url }}{% endif %}" 
+                     data-extra-image-second="{% if object.extra_image_second %}{{ object.extra_image_second.url }}{% endif %}">
                     <div class="ourwork-list-image-container fade fadeInUp">
                         <img src="{{ object.preview_image.url }}" alt="">
                     </div>
                     <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
                     <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
-                </a>
-                {% endfor %}
-                {% for object in our_works %}
-                <a href="" class="ourwork-list-column">
-                    <div class="ourwork-list-image-container fade fadeInUp">
-                        <img src="{{ object.preview_image.url }}" alt="">
-                    </div>
-                    <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
-                    <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
-                </a>
-                {% endfor %}
-                {% for object in our_works %}
-                <a href="" class="ourwork-list-column">
-                    <div class="ourwork-list-image-container fade fadeInUp">
-                        <img src="{{ object.preview_image.url }}" alt="">
-                    </div>
-                    <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
-                    <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
-                </a>
-                {% endfor %}
-                {% for object in our_works %}
-                <a href="" class="ourwork-list-column">
-                    <div class="ourwork-list-image-container fade fadeInUp">
-                        <img src="{{ object.preview_image.url }}" alt="">
-                    </div>
-                    <h1 class="ourwork-list-title fade fadeInUp">{{ object.title }}</h1>
-                    <p class="ourwork-list-text fade fadeInUp">{{ object.short_description }}</p>
-                </a>
+                </div>
                 {% endfor %}
             </div>
         </section>
+
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="swiper-close">&times;</span>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Slides will be inserted here dynamically -->
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 {% endblock %}

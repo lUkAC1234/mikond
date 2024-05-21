@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <!-- Animation End -->
 
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Swiper end -->
+
     {% block title %}{% endblock %}
 </head>
 
@@ -138,6 +142,67 @@
         });
     </script>
     <!-- Animations end -->
+
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('imageModal');
+            const modalContent = modal.querySelector('.swiper-wrapper');
+            const span = modal.getElementsByClassName('swiper-close')[0];
+
+            const ourWorkColumns = document.querySelectorAll('.ourwork-list-column');
+
+            ourWorkColumns.forEach(column => {
+                column.addEventListener('click', function () {
+                    // Очистка предыдущих слайдов
+                    modalContent.innerHTML = '';
+
+                    // Получение изображений из data-атрибутов
+                    const previewImage = column.querySelector('img').getAttribute('src');
+                    const extraImage = column.getAttribute('data-extra-image');
+                    const extraImageSecond = column.getAttribute('data-extra-image-second');
+
+                    // Добавление изображений в слайды
+                    if (extraImage) {
+                        modalContent.innerHTML += `<div class="swiper-slide"><img src="${extraImage}" alt=""></div>`;
+                    }
+                    if (extraImageSecond) {
+                        modalContent.innerHTML += `<div class="swiper-slide"><img src="${extraImageSecond}" alt=""></div>`;
+                    }
+                    modalContent.innerHTML += `<div class="swiper-slide"><img src="${previewImage}" alt=""></div>`;
+
+                    // Открытие модального окна
+                    modal.style.display = 'block';
+
+                    // Инициализация Swiper
+                    new Swiper('.swiper-container', {
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        loop: true,
+                    });
+                });
+            });
+
+            // Закрытие модального окна
+            span.onclick = function () {
+                modal.style.display = 'none';
+            };
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        });
+    </script>
+    <!-- Swiper end -->
     {% block js_block %}
 
     {% endblock %}

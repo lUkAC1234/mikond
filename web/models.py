@@ -68,6 +68,8 @@ class ServiceModel(models.Model):
 class OurWorksModel(models.Model):
     title = models.CharField(max_length=100)
     preview_image = models.ImageField(upload_to='ourwork/preview/%Y/%m/%d/')
+    extra_image = models.ImageField(blank=True, null=True, upload_to='ourwork/images/%Y/%m/%d/')
+    extra_image_second = models.ImageField(blank=True, null=True, upload_to='ourwork/images/%Y/%m/%d/')
     short_description = models.CharField(max_length=300)
 
     def __str__(self):

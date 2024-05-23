@@ -1,21 +1,6 @@
-# --------------------------------------------------------------------------- #
-# Django exceptions
 from django.contrib import admin
-# --------------------------------------------------------------------------- #
-# Models and Forms
-from .models import UserModel, ProjectsModel, CategoryModel, \
-    CollectionsCategoryModel, CollectionsModel, ContactUSModel, LogoModel
-# --------------------------------------------------------------------------- #
-# Translation
-from django.utils.translation import gettext_lazy as _
-# --------------------------------------------------------------------------- #
-# For saving html code
-from django.utils.safestring import mark_safe
-
-
-# --------------------------------------------------------------------------- #
-
-# --------------------------------------------------------------------------- #
+from .models import UserModel, ContactModel, ServiceOption, \
+StandartOption, DetailsOption, ServiceModel, OurWorksModel
 # User Model Admin
 @admin.register(UserModel)
 class UserAdmin(admin.ModelAdmin):
@@ -23,42 +8,38 @@ class UserAdmin(admin.ModelAdmin):
     list_display_links = ['id', 'username']
     search_fields = ['username']
 
-@admin.register(LogoModel)
-class LogoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'logo']
-    list_display_links = ['id', 'logo']
-    search_fields = ['logo']
+@admin.register(ServiceOption)
+class ServiceOptionAdmin(admin.ModelAdmin):
+    list_display = ('name',)
 
-@admin.register(ProjectsModel)
-class ProjectsModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'created_at', 'updated_at']
+@admin.register(ServiceModel)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title']
     list_display_links = ['id', 'title']
     search_fields = ['title']
 
-@admin.register(CollectionsModel)
-class CollectionsModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'created_at', 'updated_at']
+@admin.register(DetailsOption)
+class DetailsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+    list_display_links = ['id', 'name']
+    search_fields = ['name']
+
+@admin.register(StandartOption)
+class StandartAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name']
+    list_display_links = ['id', 'name']
+    search_fields = ['name']
+
+@admin.register(OurWorksModel)
+class OurWorksAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title']
     list_display_links = ['id', 'title']
     search_fields = ['title']
 
-@admin.register(CategoryModel)
-class CategoryModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
-    list_display_links = ['id', 'name']
-    search_fields = ['name']
+@admin.register(ContactModel)
+class ContactModelAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'service', 'message')
 
-@admin.register(CollectionsCategoryModel)
-class CollectionsCategoryModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
-    list_display_links = ['id', 'name']
-    search_fields = ['name']
 
-@admin.register(ContactUSModel)
-class ContactAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
-    list_display_links = ['id', 'name']
-    search_fields = ['name']
-    readonly_fields = ['user']
-
-admin.site.site_header = 'Mikond'
+admin.site.site_header = 'Mikond Administration'
 admin.site.site_title = 'Mikond'

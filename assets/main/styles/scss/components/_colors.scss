@@ -1,0 +1,16 @@
+$body: #121212;
+$black: #000;
+$primary-color: #FFCF7A;
+$extra-dark: #121212;
+$white: #ffffff;
+$gray: #757575;
+$footer-link-title: #949494;
+:root {
+    --body: #{$body};
+    --black: #{$black};
+    --extra-dark: #{$extra-dark};
+    --primary-color: #{$primary-color};
+    --white: #{$white};
+    --gray: #{$gray};
+    --footer-link-title: #{$footer-link-title};
+}

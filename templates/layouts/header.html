@@ -1,76 +1,30 @@
 {% load static %}
-<header id="site-header">
-    <div class="header-container">
-        <div class="nav">
-            <input type="checkbox" id="nav-check">
-            <div class="nav-header">
-                <div class="nav-title">
-                    <a href="{% url 'main' %}">
-                        {% for object in logos %}
-                            <img src="{{ object.logo.url }}" alt="">
-                        {% endfor %}
-                    </a>
-                    <div class="header-number-container">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+993938000055" class="number">+998 93 800 00 55</a>
-                    </div>
-                    <div class="header-links">
-                        <div><a href=""><i class="fab fa-instagram"></i></a></div>
-                        <div><a href="https://www.facebook.com/lustraoniks?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a></div>
-                        <div><a href="https://t.me/mikondcom"><i class="fab fa-telegram"></i></a></div>
-                        <div><a href=""><i class="fab fa-youtube"></i></a></div>
-                        <div><a href=""><i class="fab fa-twitter"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="nav-btn">
-                <label for="nav-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-            </div>
-
-            <div class="nav-links">
-                {% if request.user.is_authenticated %}
-                <h1>{{ request.user }}</h1>
-                {% else %}
-                <h1>User</h1>
-                {% endif %}
-                {% if request.user.is_staff %}
-                <a href="{% url 'adminpanel' %}">Admin</a>
-                {% endif %}
-                <a href="{% url 'about' %}">About</a>
-                <a href="{% url 'projects' %}">Projects</a>
-                <a href="{% url 'collections' %}">Collections</a>
-                {% if request.user.is_authenticated %}
-                <a href="{% url 'contact' %}">Contact</a>
-                {% else %}
-                <a href="{% url 'signin' %}">Contact</a>
-                {% endif %}
-                {% if request.user.is_authenticated %}
-                <a href="{% url 'logout' %}">Logout</a>
-                {% else %}
-                <a href="{% url 'signin' %}">Sign In</a>
-                {% endif %}
-                <div class="header-mobile-number-container">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+993938000055" class="number">+998 93 800 00 55</a>
-                </div>
-                <div class="header-links-mobile">
-                    <div><a href=""><i class="fab fa-instagram"></i></a></div>
-                    <div><a href="https://www.facebook.com/lustraoniks?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a></div>
-                    <div><a href="https://t.me/mikondcom"><i class="fab fa-telegram"></i></a></div>
-                    <div><a href=""><i class="fab fa-youtube"></i></a></div>
-                    <div><a href=""><i class="fab fa-twitter"></i></a></div>
-                </div>
-            </div>
-            <div class="second-header">
-                <a href="{% url 'projects' %}">
-                    <img src="{% static 'main/images/layout/desingweek.jpg' %}" alt="">
+<header class="header" id="main-header">
+    <nav class="header-nav">
+        <div class="header-logo-container">
+            <a href="/">
+                <img src="{% static 'main/images/main-page/logo.png' %}" alt="">
+            </a>
+        </div>
+        <div class="header-links-container" id="header-links-container">
+            <ul class="header-links-wrapper">
+                <li class="header-link"><a href="{% url 'main:catalog' %}">Каталог</a></li>
+                <li class="header-link"><a href="{% url 'main:ourworks' %}">Наши работы</a></li>
+            </ul>
+            <div class="header-call-btn-container">
+                <a href="tel:+998938000055" class="header-call-btn">
+                    <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
         </div>
-    </div>
-    <!-- End Header -->
+        <div class="header-burger-container">
+            <button class="header-burger" id="header-burger">
+                <!-- Open icon -->
+                <i class="open fa-solid fa-bars-staggered"></i>
+
+                <!-- Close icon -->
+                <i class="close fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </nav>
 </header>

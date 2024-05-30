@@ -75,3 +75,9 @@ body {
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
 }
+
+canvas,
+model-viewer {
+    width: 30rem;
+    height: 30rem;
+}

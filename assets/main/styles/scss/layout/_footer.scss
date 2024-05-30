@@ -67,6 +67,15 @@
     }
 }
 
+.footer-bottom-creators {
+    color: var(--white);
+    font-family: var(--roboto);
+}
+
+.footer-bottom-creators-text {
+    text-decoration: underline;
+}
+
 .footer-bottom-created-text,
 .footer-bottom-creators-text {
     font-size: 1rem;

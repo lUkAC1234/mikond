@@ -65,6 +65,9 @@ class ourWorksView(CreateView):
         context = self.get_context_data(form=form)
         return self.render_to_response(context)
     
+class glbView(TemplateView):
+    template_name = "pages/glb.html"
+
 def PageNotFound(request, *args, **kwargs):
     text = render_to_string('pages/page404.html')
     return HttpResponseNotFound(text)

@@ -9,7 +9,15 @@
         <section class="ourwork-video-section">
             <div class="ourwork-video-container fade fadeInDown">
                 <h1 class="ourwork-video-title">Наши работы</h1>
-                <video src="{% static 'main/videos/ourworksVideo2.mp4' %}" class="ourwork-video" autoplay muted loop>
+                <video 
+                    src="{% static 'main/videos/ourworksVideo2.mp4' %}" 
+                    class="ourwork-video" 
+                    autoplay 
+                    muted 
+                    loop 
+                    controlslist="nodownload" 
+                    oncontextmenu="return false;"
+                    style="pointer-events: none;">
                 </video>
             </div>
         </section>

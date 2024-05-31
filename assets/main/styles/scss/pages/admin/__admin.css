@@ -440,4 +440,34 @@ body #container .shifted .messagelist .success a {
   border: none;
 }
 
+.module .flex-container .readonly {
+  color: var(--primary-color) !important;
+}
+
+#changelist-filter {
+  background-color: var(--extra-dark) !important;
+}
+
+#changelist-filter li.selected {
+  border-color: var(--primary-color) !important;
+}
+
+#changelist-filter li.selected a {
+  color: var(--primary-color) !important;
+}
+
+#changelist-filter details summary {
+  color: var(--white);
+  font-family: var(--roboto);
+  font-size: 1rem;
+}
+
+#changelist-filter details > summary::before {
+  color: var(--primary-color) !important;
+}
+
+.module h2, .module caption, .inline-group h2 {
+  background: var(--primary-color) !important;
+}
+
 /*# sourceMappingURL=__admin.css.map */

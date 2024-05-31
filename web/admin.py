@@ -1,12 +1,19 @@
 from django.contrib import admin
 from .models import UserModel, ContactModel, ServiceOption, \
-StandartOption, DetailsOption, ServiceModel, OurWorksModel
+StandartOption, DetailsOption, ServiceModel, OurWorksModel, VisitHistory
 # User Model Admin
 @admin.register(UserModel)
 class UserAdmin(admin.ModelAdmin):
     list_display = ['id', 'username']
     list_display_links = ['id', 'username']
     search_fields = ['username']
+
+@admin.register(VisitHistory)
+class VisitHistoryAdmin(admin.ModelAdmin):
+    list_display = ('user', 'ip_address', 'timestamp')
+    list_filter = ('user', 'timestamp', 'ip_address')
+    search_fields = ('user__username', 'ip_address')
+    readonly_fields = ('user', 'ip_address')
 
 @admin.register(ServiceOption)
 class ServiceOptionAdmin(admin.ModelAdmin):

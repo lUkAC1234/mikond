@@ -1,9 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 
 class UserModel(AbstractUser):
     pass
+
+class VisitHistory(models.Model):
+    user = models.ForeignKey(UserModel, null=True, blank=True, on_delete=models.CASCADE)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        if self.user:
+            return f"{self.user.username} visited at {self.timestamp}"
+        else:
+            return f"Anonymous user with IP {self.ip_address} visited at {self.timestamp}"
 
 class ServiceOption(models.Model):
     name = models.CharField(max_length=100)

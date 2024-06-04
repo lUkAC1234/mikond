@@ -40,20 +40,12 @@
                                 <li class="product-first-standart-list fade fadeInLeft">{{ standart.name }}</li>
                                 {% endfor %}
                             </ul>
-                            {% for service in services %}
-                                {% if forloop.counter > 1 and forloop.counter <= 2 and service.pk != object.pk %}
-                                    <a href="{% url 'main:service' pk=service.pk %}"
-                                    class="product-slider-column first fade fadeInDown">
-                                        <img src="{{ service.image.url }}" alt="">
-                                    </a>
-                                {% endif %}
-                            {% endfor %}
                         </div>
                     </div>
                 </div>
                 <div class="product-slider-container">
                     {% for service in services %}
-                        {% if forloop.counter >= 3 and forloop.counter <= 4 %} 
+                        {% if forloop.counter >= 2 and forloop.counter < 4 %} 
                             <a href="{% url 'main:service' pk=service.pk %}">
                                 <div class="product-slider-column">
                                     <h1 class="product-slider-title fade fadeInDown">{{ service.title }}</h1>

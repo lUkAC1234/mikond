@@ -7,20 +7,19 @@
 
 .contact-button {
     display: inline-flex;
-    background-color: var(--primary-color);
-    border-radius: 999rem;
     gap: 0.5rem;
     color: var(--extra-dark);
-    padding: .82857rem 1.27143rem;
     letter-spacing: 0.6;
     font-size: 0.9rem;
     font-family: var(--roboto);
     border: none;
     font-weight: 500;
     cursor: pointer;
+    background: none;
 
     i {
-        font-size: 1rem;
+        font-size: 2rem;
+        color: var(--primary-color);
     }
 }
 

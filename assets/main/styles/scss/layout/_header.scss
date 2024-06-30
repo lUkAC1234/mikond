@@ -176,3 +176,17 @@ body {
         }
     }
 }
+
+.header-social-icons {
+    display: flex;
+    gap: 0.5rem;
+
+    i {
+        font-size: 1.5rem;
+        color: var(--white);
+    }
+
+    @media screen and (max-width: 500px) {
+        gap: 1rem;
+    }
+}

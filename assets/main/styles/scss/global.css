@@ -1318,6 +1318,20 @@ body {
     display: none;
   }
 }
+.header-social-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+.header-social-icons i {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+@media screen and (max-width: 500px) {
+  .header-social-icons {
+    gap: 1rem;
+  }
+}
+
 .footer {
   background-color: var(--black);
   padding-block: 3rem 0;
